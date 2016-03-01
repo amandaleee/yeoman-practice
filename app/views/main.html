@@ -1,23 +1,23 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
+<div class="container">
+  <h2>What I need to buy this week at the grocery</h2>
+  <!--items input-->
   <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+    <form role="form" ng-submit="addItem()">
+      <div class="row">
+        <div class="input-group">
+          <input type="text" ng-model="item" placeholder="What to buy?" class="form-control">
+          <span class="input-group-btn">
+            <input type="submit" class="btn btn-primary" value="Add">
+          </span>
+        </div>
+      </div>
+    </form>
   </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
+  <!--items list-->
+  <p class="form-grp" ng-repeat="item in items">
+    <input type="text" ng-model="item" class="form-control">
+    <span class="input-group-btn">
+      <button class="btn btn-danger" ng-click="removeItem($index)" aria-label="Remove">X</button>
+    </span>
   </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
 </div>
